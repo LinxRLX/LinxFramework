@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         Debug.Log("It Is Started");
     }

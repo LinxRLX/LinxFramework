@@ -42,8 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Test.cs" />
+     <Compile Include="Assets\Scripts\Linx\Framework\CodeStyle\CodeStyle.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scenes" />
+     <Folder Include="Assets\Scripts\Linx\Framework" />
+     <Folder Include="Assets\Scripts\Linx" />
+     <Folder Include="Assets\Scripts\Linx\Framework\CodeStyle" />
      <Folder Include="Assets\Scripts" />
      <Reference Include="UnityEngine">
      <HintPath>D:\Unity\2021.3.16f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
