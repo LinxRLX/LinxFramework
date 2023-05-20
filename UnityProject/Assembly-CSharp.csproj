@@ -42,21 +42,21 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Jammo-Character\Scripts\CharacterSkinController.cs" />
+     <Compile Include="Assets\Scripts\PlayerAnimator.cs" />
+     <Compile Include="Assets\Scripts\GameInput\GameInput.cs" />
      <Compile Include="Assets\Jammo-Character\Scripts\MovementInput.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
      <Compile Include="Assets\Scripts\API\API.cs" />
-     <Compile Include="Assets\Scripts\GameInput\GameInput.cs" />
-     <Compile Include="Assets\Scripts\PlayerAnimator.cs" />
-     <Compile Include="Assets\Scripts\SliderValue.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\SliderValue.cs" />
+     <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Jammo-Character\Prefabs" />
      <Folder Include="Assets\Jammo-Character\Textures" />
+     <Folder Include="Assets\Linx\Framework" />
      <Folder Include="Assets\Jammo-Character\Scripts" />
      <None Include="Assets\Jammo-Character\Textures\mixbot1.json" />
-     <Folder Include="Assets\Scripts\Linx\Framework" />
      <Folder Include="Assets\Jammo-Character\Animations" />
      <Folder Include="Assets\Resources\Atlas" />
      <Folder Include="Assets\InputSystem" />
@@ -67,7 +67,7 @@
      <Folder Include="Assets\Jammo-Character" />
      <Folder Include="Assets\Jammo-Character\Scenes\JammoScene" />
      <Folder Include="Assets\Jammo-Character\Models" />
-     <Folder Include="Assets\Scripts\Linx" />
+     <Folder Include="Assets\Linx" />
      <Folder Include="Assets\Jammo-Character\Scenes" />
      <Folder Include="Assets\Scripts\API" />
      <Folder Include="Assets\Resources" />

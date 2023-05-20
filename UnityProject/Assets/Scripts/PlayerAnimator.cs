@@ -22,7 +22,7 @@ public class PlayerAnimator : MonoBehaviour
         if (mPlayer.IsWalking)
         {
             m_blendValue += blendSpeed * Time.deltaTime;
-            var maxValue = 0.6f;
+            const float maxValue = 0.6f;
             if (m_blendValue > maxValue)
             {
                 m_blendValue = maxValue;
@@ -33,7 +33,7 @@ public class PlayerAnimator : MonoBehaviour
         else
         {
             m_blendValue -= blendSpeed * Time.deltaTime;
-            var minValue = 0f;
+            const float minValue = 0f;
             if (m_blendValue < minValue)
             {
                 m_blendValue = minValue;
