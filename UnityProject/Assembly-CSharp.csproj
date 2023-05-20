@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\GameInput\GameInput.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimator.cs" />
      <Compile Include="Assets\Scripts\SliderValue.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Jammo-Character\Prefabs" />

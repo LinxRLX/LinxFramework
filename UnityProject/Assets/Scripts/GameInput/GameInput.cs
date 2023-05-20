@@ -6,30 +6,30 @@ using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour
 {
-    public event EventHandler OnInteractAction;
-    private PlayerInputActions mPlayerInputActions;
+    public event EventHandler OnInteractActionEvent;
+    private PlayerInputActions m_playerInputActions;
 
     private void Awake()
     {
-        if (API.sGameInput != null)
+        if (API.GameInput != null)
         {
-            Destroy(API.sGameInput);
+            Destroy(API.GameInput);
         }
-        API.sGameInput = this;
-        mPlayerInputActions = new PlayerInputActions();
-        mPlayerInputActions.Player.Enable();
+        API.GameInput = this;
+        m_playerInputActions = new PlayerInputActions();
+        m_playerInputActions.Player.Enable();
 
-        mPlayerInputActions.Player.Interact.performed += Interact_Performed;
+        m_playerInputActions.Player.Interact.performed += Interact_Performed;
     }
 
     private void Interact_Performed(InputAction.CallbackContext obj)
     {
-        OnInteractAction?.Invoke(this, EventArgs.Empty);
+        OnInteractActionEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public Vector2 GetMovementVectorNormalized()
     {
-        Vector2 inputVector = mPlayerInputActions.Player.Move.ReadValue<Vector2>();
+        Vector2 inputVector = m_playerInputActions.Player.Move.ReadValue<Vector2>();
         // πÈ“ªªØ
         inputVector = inputVector.normalized;
         return inputVector;

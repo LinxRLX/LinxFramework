@@ -9,7 +9,8 @@ public class SliderValue : MonoBehaviour
 {
     public Text text;
     public Slider slider;
-    void Update()
+
+    private void Update()
     {
         text.text = slider.value.ToString(CultureInfo.CurrentCulture);
     }

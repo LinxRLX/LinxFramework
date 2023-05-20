@@ -7,19 +7,19 @@ public class PlayerAnimator : MonoBehaviour
     private const string BLEND = "Blend";
 
     [SerializeField] private Player mPlayer;
-    private Animator mAnimator;
+    private Animator m_animator;
     private static readonly int s_Blend = Animator.StringToHash(BLEND);
     private float m_blendValue = 0;
     public float blendSpeed = 10f;
 
     private void Awake()
     {
-        mAnimator = GetComponent<Animator>();
+        m_animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        if (mPlayer.isWalking)
+        if (mPlayer.IsWalking)
         {
             m_blendValue += blendSpeed * Time.deltaTime;
             var maxValue = 0.6f;
@@ -39,6 +39,6 @@ public class PlayerAnimator : MonoBehaviour
                 m_blendValue = minValue;
             }
         }
-        mAnimator.SetFloat(s_Blend, m_blendValue);
+        m_animator.SetFloat(s_Blend, m_blendValue);
     }
 }

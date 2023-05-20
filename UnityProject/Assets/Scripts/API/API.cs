@@ -8,5 +8,5 @@ using UnityEngine;
 // 之后改为单例
 public static class API
 {
-    public static GameInput sGameInput;
+    public static GameInput GameInput;
 }
