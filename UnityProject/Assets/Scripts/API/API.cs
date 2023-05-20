@@ -9,4 +9,5 @@ using UnityEngine;
 public static class API
 {
     public static GameInput GameInput;
+    public static Player Player;
 }
