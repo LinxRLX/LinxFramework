@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 7;
     [SerializeField] private float rotateSpeed = 50f;
+    [SerializeField] private float targetRotateSpeed = 20f;
+    [SerializeField] private float fieldOfView = 10f;
+    private Transform m_target = null;
 
     public bool IsWalking { get; private set; } = false;
 
@@ -19,6 +22,8 @@ public class Player : MonoBehaviour
     {
         // 移动和旋转
         HandleMovement();
+        // 查找目标
+        HandleTargetFinder();
     }
 
     private void HandleMovement()
@@ -70,11 +75,29 @@ public class Player : MonoBehaviour
         }
 
         IsWalking = moveDir != Vector3.zero;
+
         // 设置角色转向
-        if (transform.forward != moveDir)
+        if (m_target != null)
         {
-            transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+            var orginForward = transform.forward;
+            transform.LookAt(m_target.position, Vector3.up);
+            var targetForward = transform.forward;
+            targetForward.y = 0;
+            transform.forward = Vector3.Slerp(orginForward, targetForward, Time.deltaTime * targetRotateSpeed);
         }
+        else
+        {
+            if (transform.forward != moveDir)
+            {
+                transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+            }
+        }
+    }
+
+    private void HandleTargetFinder()
+    {
+        var colliders = Physics.OverlapSphere(transform.position, fieldOfView, LayerMask.GetMask("Enemy"));
+        m_target = colliders.Length > 0 ? colliders[0].transform : null;
     }
 
     public void SetMoveSpeed(float newValue)
