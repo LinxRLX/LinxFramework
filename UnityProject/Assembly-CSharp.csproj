@@ -41,15 +41,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Jammo-Character\Scripts\CharacterSkinController.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimator.cs" />
      <Compile Include="Assets\Scripts\GameInput\GameInput.cs" />
-     <Compile Include="Assets\Jammo-Character\Scripts\MovementInput.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\API\API.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\SliderValue.cs" />
      <Compile Include="Assets\InputSystem\PlayerInputActions.cs" />
+     <Compile Include="Assets\Jammo-Character\Scripts\CharacterSkinController.cs" />
+     <Compile Include="Assets\Jammo-Character\Scripts\MovementInput.cs" />
+     <Compile Include="Assets\Scripts\API\API.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\Jammo-Character\Prefabs" />
@@ -73,6 +73,8 @@
      <Folder Include="Assets\Resources" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Jammo-Character\Materials" />
+     <Folder Include="Assets\Scenes\SampleScene" />
+     <Folder Include="Assets\Renderer" />
      <Folder Include="Assets\Jammo-Character\Animations\Default" />
      <Reference Include="UnityEngine">
      <HintPath>D:\Unity\2021.3.16f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -314,9 +316,6 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>D:\Unity\2021.3.16f1c1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
-     <Reference Include="Newtonsoft.Json">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Burst.Cecil.Mdb">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
      </Reference>
@@ -328,6 +327,9 @@
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Rocks">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\PackageCache\com.unity.burst@1.8.2\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.iOS.Extensions.Xcode">
      <HintPath>D:\Unity\2021.3.16f1c1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -713,8 +715,17 @@
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Recorder.Base">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="PPv2URPConverters">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -728,6 +739,15 @@
      <Reference Include="Unity.TextMeshPro">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Burst.Editor">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Searcher.Editor">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Core.Runtime">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Postprocessing.Editor">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
      </Reference>
@@ -740,14 +760,23 @@
      <Reference Include="Unity.Rider.Editor">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.PlasticSCM.Editor">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Services.Core">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Mathematics">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ShaderGraph.Editor">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Cinemachine">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
@@ -755,8 +784,14 @@
      <Reference Include="Unity.Services.Core.Analytics">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Burst">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Postprocessing.Runtime">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.RenderPipelines.Universal.Editor">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
      </Reference>
      <Reference Include="com.unity.cinemachine.editor">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
@@ -767,53 +802,20 @@
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Recorder">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Searcher.Editor">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="PPv2URPConverters">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Editor">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Mathematics">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
      </Reference>
      <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
      <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+     <Reference Include="Unity.Mathematics.Editor">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.ShaderGraph.Editor">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
+     <Reference Include="Unity.RenderPipelines.Core.Editor">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Burst.Editor">
-     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+     <Reference Include="Unity.Recorder">
+     <HintPath>G:\UnityProject\LinxFramework\UnityProject\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
