@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public class ReportUI : MonoBehaviour
 
     [SerializeField] private GameObject prefabAssetsListItem;
     [SerializeField] private GameObject prefabBundleListItem;
+
 
     private void Awake()
     {
@@ -48,8 +50,11 @@ public class ReportUI : MonoBehaviour
             var go = GameObject.Instantiate(prefabBundleListItem, groupBundle);
             var textName = go.transform.Find("TextName").GetComponent<Text>();
             var textSize = go.transform.Find("TextSize").GetComponent<Text>();
-            textName.text = bundleInfo.Key;
+            textName.text = Path.GetFileName(bundleInfo.Key);
             textSize.text = API.GetSize(bundleInfo.Value);
+            
+            var fullName = textName.GetComponent<CanShowFullText>();
+            fullName.fullText = bundleInfo.Key;
         }
     }
 
@@ -59,7 +64,10 @@ public class ReportUI : MonoBehaviour
         {
             var go = GameObject.Instantiate(prefabAssetsListItem, groupAdd);
             var textAdd = go.GetComponentInChildren<Text>();
-            textAdd.text = assetName;
+            textAdd.text = Path.GetFileName(assetName);
+            
+            var fullName = textAdd.GetComponent<CanShowFullText>();
+            fullName.fullText = assetName;
         }
     }
 
@@ -69,7 +77,10 @@ public class ReportUI : MonoBehaviour
         {
             var go = GameObject.Instantiate(prefabAssetsListItem, groupChg);
             var textChg = go.GetComponentInChildren<Text>();
-            textChg.text = assetName;
+            textChg.text = Path.GetFileName(assetName);
+            
+            var fullName = textChg.GetComponent<CanShowFullText>();
+            fullName.fullText = assetName;
         }
     }
 
@@ -79,7 +90,10 @@ public class ReportUI : MonoBehaviour
         {
             var go = GameObject.Instantiate(prefabAssetsListItem, groupDel);
             var textDel = go.GetComponentInChildren<Text>();
-            textDel.text = assetName;
+            textDel.text = Path.GetFileName(assetName);
+            
+            var fullName = textDel.GetComponent<CanShowFullText>();
+            fullName.fullText = assetName;
         }
     }
 

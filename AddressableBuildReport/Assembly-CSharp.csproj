@@ -43,8 +43,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Test.cs" />
      <Compile Include="Assets\Scripts\ReportFileLogic.cs" />
+     <Compile Include="Assets\Scripts\CanShowFullText.cs" />
      <Compile Include="Assets\Scripts\AssetsData.cs" />
      <Compile Include="Assets\Scripts\ReportUI.cs" />
+     <Compile Include="Assets\Scripts\FollowMouse.cs" />
      <Compile Include="Assets\Scripts\BundleData.cs" />
      <Compile Include="Assets\Scripts\SelectFileLogic.cs" />
      <Compile Include="Assets\Scripts\UIGradient.cs" />
@@ -70,7 +72,6 @@
      <Folder Include="Assets\UIAssets\Animations\UI Elements\Buttons\Music Player" />
      <Folder Include="Assets\UIAssets" />
      <Folder Include="Assets\UIAssets\Animations\Boot" />
-     <Folder Include="Assets\UIAssets\Rendering" />
      <Folder Include="Assets\UIAssets\Animations\UI Elements\Input Fields" />
      <Folder Include="Assets\Scenes" />
      <Folder Include="Assets\UIAssets\Animations\Widgets" />
